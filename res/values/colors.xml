@@ -14,7 +14,7 @@
 -->
 <resources>
     <!-- Material -->
-    <color name="primary">#212121</color>
-    <color name="primary_dark">#424242</color>
-    <color name="accent">#fafafa</color>
+    <color name="primary">@*android:color/material_blue_grey_900</color>
+    <color name="primary_dark">@*android:color/material_blue_grey_950</color>
+    <color name="accent">@*android:color/material_deep_teal_500</color>
 </resources>
