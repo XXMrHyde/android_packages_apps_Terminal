@@ -366,24 +366,29 @@ public class TerminalView extends ListView {
 
     public void updatePreferences() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
-        String val;
+        String fontSize;
+        String backgroundColor;
+        String textColor;
 
-        val = sp.getString(TerminalSettingsActivity.KEY_FONT_SIZE, "12");
-        mMetrics.setTextSize(ptToDp(Float.parseFloat(val)));
+        fontSize = sp.getString(TerminalSettingsActivity.KEY_FONT_SIZE,
+                TerminalSettingsActivity.DEFAULT_TEXT_SIZE);
+        backgroundColor = sp.getString(TerminalSettingsActivity.KEY_BACKGROUND_COLOR,
+                TerminalSettingsActivity.DARKKAT_BLUE_GREY);
+        textColor = sp.getString(TerminalSettingsActivity.KEY_TEXT_COLOR, 
+                TerminalSettingsActivity.DEEP_TEAL_500);
 
-        val = sp.getString(TerminalSettingsActivity.KEY_TEXT_COLORS, "white/black");
-        int fg = 0xfafafa;
-        int bg = 0x212121;
-        int idx = val.indexOf('/');
-        if (idx != -1) {
-            try {
-                fg = Color.parseColor(val.substring(0, idx));
-                bg = Color.parseColor(val.substring(idx + 1));
-            }
-            catch (IllegalArgumentException e) {
-                // Ignore
-            }
+        int bg = 0x1b1f23;
+        int fg = 0x009688;
+
+        try {
+            bg = Color.parseColor(backgroundColor);
+            fg = Color.parseColor(textColor);
         }
+        catch (IllegalArgumentException e) {
+            // Ignore
+        }
+
+        mMetrics.setTextSize(ptToDp(Float.parseFloat(fontSize)));
         mTerm.setColors(fg, bg);
         mMetrics.run.fg = fg;
         mMetrics.run.bg = bg;

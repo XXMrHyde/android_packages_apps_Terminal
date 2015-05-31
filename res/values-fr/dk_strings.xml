@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 DarkKat
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <!-- Categories -->
+    <string name="cat_text_background_settings">Text and background settings</string> <!-- needs translation -->
+
+    <!-- Color setting -->
+    <string name="background_color_title">Background color</string> <!-- needs translation -->
+    <string name="text_color_title">Text color</string> <!-- needs translation -->
+    <string name="dialog_background_color_title">Choose a background color</string> <!-- needs translation -->
+    <string name="dialog_text_color_title">Choose a text color</string> <!-- needs translation -->
+
+    <!-- Font size entries -->
+    <string name="font_size_10_dp">10 dp</string> <!-- needs translation -->
+    <string name="font_size_12_dp">12 dp</string> <!-- needs translation -->
+    <string name="font_size_14_dp">14 dp</string> <!-- needs translation -->
+    <string name="font_size_16_dp">16 dp</string> <!-- needs translation -->
+    <string name="font_size_20_dp">20 dp</string> <!-- needs translation -->
+    <string name="font_size_24_dp">24 dp</string> <!-- needs translation -->
+
+    <!-- Color entries -->
+    <string name="black">Schwarz</string>
+    <string name="white">Weiss</string>
+    <string name="dark">Dark</string> <!-- needs translation -->
+    <string name="light">Light</string> <!-- needs translation -->
+    <string name="teal">Teal</string> <!-- needs translation -->
+    <string name="green">Green</string> <!-- needs translation -->
+    <string name="amber">Amber</string> <!-- needs translation -->
+    <string name="red">Red</string> <!-- needs translation -->
+    <string name="blue">Blue</string> <!-- needs translation -->
+</resources>

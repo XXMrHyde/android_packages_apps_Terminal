@@ -18,12 +18,15 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/menu_item_settings">
+
     <PreferenceCategory
-        android:title="@string/screen_settings">
+        android:title="@string/cat_screen_settings">
+
         <SwitchPreference
             android:key="fullscreen_mode"
             android:title="@string/fullscreen_mode_title"
             android:defaultValue="false" />
+
         <ListPreference
             android:key="screen_orientation"
             android:title="@string/screen_orientation_title"
@@ -31,23 +34,29 @@
             android:entries="@array/screen_orientation_labels"
             android:entryValues="@array/screen_orientation_values" />
     </PreferenceCategory>
+
     <PreferenceCategory
-        android:title="@string/text_settings">
+        android:title="@string/cat_text_background_settings">
+
         <ListPreference
             android:key="font_size"
             android:title="@string/font_size_title"
             android:dialogTitle="@string/font_size_title"
             android:entries="@array/font_size_labels"
-            android:entryValues="@array/font_size_values"
-            android:defaultValue="12" />
+            android:entryValues="@array/font_size_values" />
+
         <ListPreference
-            android:key="text_colors"
-            android:title="@string/text_colors_title"
-            android:dialogTitle="@string/text_colors_title"
-            android:entries="@array/text_colors_labels"
-            android:entryValues="@array/text_colors_values"
-            android:defaultValue="white/black" />
+            android:key="background_color"
+            android:title="@string/background_color_title"
+            android:dialogTitle="@string/dialog_background_color_title"
+            android:entries="@array/color_entries"
+            android:entryValues="@array/color_values" />
+
+        <ListPreference
+            android:key="text_color"
+            android:title="@string/text_color_title"
+            android:dialogTitle="@string/dialog_text_color_title"
+            android:entries="@array/color_entries"
+            android:entryValues="@array/color_values" />
     </PreferenceCategory>
-    <!-- Keyboard category -->
-    <!-- Shell category -->
 </PreferenceScreen>

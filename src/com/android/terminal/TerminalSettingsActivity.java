@@ -16,10 +16,12 @@
 
 package com.android.terminal;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.util.Log;
@@ -30,27 +32,57 @@ import static com.android.terminal.Terminal.TAG;
 /**
  * Settings for Terminal.
  */
-public class TerminalSettingsActivity extends PreferenceActivity {
+public class TerminalSettingsActivity extends PreferenceActivity implements
+        SharedPreferences.OnSharedPreferenceChangeListener {
 
     public static final String KEY_FULLSCREEN_MODE = "fullscreen_mode";
     public static final String KEY_SCREEN_ORIENTATION = "screen_orientation";
     public static final String KEY_FONT_SIZE = "font_size";
-    public static final String KEY_TEXT_COLORS = "text_colors";
+    public static final String KEY_BACKGROUND_COLOR = "background_color";
+    public static final String KEY_TEXT_COLOR = "text_color";
+
+    public static final String DEFAULT_TEXT_SIZE = "16";
+    public static final String DARKKAT_BLUE_GREY = "#1b1f23";
+    public static final String DEEP_TEAL_500 = "#009688";
 
     private SwitchPreference mFullscreenModePref;
     private ListPreference mScreenOrientationPref;
     private ListPreference mFontSizePref;
-    private ListPreference mTextColorsPref;
+    private ListPreference mBackgroundColorPref;
+    private ListPreference mTextColorPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
 
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        sp.registerOnSharedPreferenceChangeListener(this);
+
+        String stringValue;
+
         mFullscreenModePref = (SwitchPreference) findPreference(KEY_FULLSCREEN_MODE);
+
         mScreenOrientationPref = (ListPreference) findPreference(KEY_SCREEN_ORIENTATION);
+        stringValue = sp.getString(KEY_SCREEN_ORIENTATION, "automatic");
+        mScreenOrientationPref.setValue(stringValue);
+        mScreenOrientationPref.setSummary(mScreenOrientationPref.getEntry());
+
         mFontSizePref = (ListPreference) findPreference(KEY_FONT_SIZE);
-        mTextColorsPref = (ListPreference) findPreference(KEY_TEXT_COLORS);
+        stringValue = sp.getString(KEY_FONT_SIZE, DEFAULT_TEXT_SIZE);
+        mFontSizePref.setValue(stringValue);
+        mFontSizePref.setSummary(mFontSizePref.getEntry());
+
+
+        mBackgroundColorPref = (ListPreference) findPreference(KEY_BACKGROUND_COLOR);
+        stringValue = sp.getString(KEY_BACKGROUND_COLOR, DARKKAT_BLUE_GREY);
+        mBackgroundColorPref.setValue(stringValue);
+        mBackgroundColorPref.setSummary(mBackgroundColorPref.getEntry());
+
+        mTextColorPref = (ListPreference) findPreference(KEY_TEXT_COLOR);
+        stringValue = sp.getString(KEY_TEXT_COLOR, DEEP_TEAL_500);
+        mTextColorPref.setValue(stringValue);
+        mTextColorPref.setSummary(mTextColorPref.getEntry());
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -63,5 +95,19 @@ public class TerminalSettingsActivity extends PreferenceActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        int index;
+        if (KEY_SCREEN_ORIENTATION.equals(key)) {
+            mScreenOrientationPref.setSummary(mScreenOrientationPref.getEntry());
+        } else if (KEY_FONT_SIZE.equals(key)) {
+            mFontSizePref.setSummary(mFontSizePref.getEntry());
+        } else if (KEY_BACKGROUND_COLOR.equals(key)) {
+            mBackgroundColorPref.setSummary(mBackgroundColorPref.getEntry());
+        } else if (KEY_TEXT_COLOR.equals(key)) {
+            mTextColorPref.setSummary(mTextColorPref.getEntry());
+        }
     }
 }

@@ -16,10 +16,11 @@
 -->
 <resources>
     <string-array name="screen_orientation_labels">
-        <item>Automatic</item>
-        <item>Landscape</item>
-        <item>Portrait</item>
+        <item>@string/screen_orientation_automatic</item>
+        <item>@string/screen_orientation_landscape</item>
+        <item>@string/screen_orientation_portrait</item>
     </string-array>
+
     <string-array name="screen_orientation_values" translatable="false">
         <item>automatic</item>
         <item>landscape</item>
@@ -27,13 +28,14 @@
     </string-array>
 
     <string-array name="font_size_labels">
-        <item>10 pt</item>
-        <item>12 pt</item>
-        <item>14 pt</item>
-        <item>16 pt</item>
-        <item>20 pt</item>
-        <item>24 pt</item>
+        <item>@string/font_size_10_dp</item>
+        <item>@string/font_size_12_dp</item>
+        <item>@string/font_size_14_dp</item>
+        <item>@string/font_size_16_dp</item>
+        <item>@string/font_size_20_dp</item>
+        <item>@string/font_size_24_dp</item>
     </string-array>
+
     <string-array name="font_size_values" translatable="false">
         <item>10</item>
         <item>12</item>
@@ -43,21 +45,28 @@
         <item>24</item>
     </string-array>
 
-    <string-array name="text_colors_labels">
-        <item>Black text on white</item>
-        <item>White text on black</item>
-        <item>Green text on black</item>
-        <item>Amber text on black</item>
-        <item>Red text on black</item>
-        <item>Blue text on black</item>
+    <string-array name="color_entries">
+        <item>@string/black</item>
+        <item>@string/white</item>
+        <item>@string/dark</item>
+        <item>@string/light</item>
+        <item>@string/teal</item>
+        <item>@string/green</item>
+        <item>@string/amber</item>
+        <item>@string/red</item>
+        <item>@string/blue</item>
     </string-array>
-    <string-array name="text_colors_values" translatable="false">
-        <item>#212121/#fafafa</item>
-        <item>#fafafa/#212121</item>
-        <item>#4CAF50/#212121</item>
-        <item>#FF9800/#212121</item>
-        <item>#F44336/#212121</item>
-        <item>#3F51B5/#212121</item>
+
+    <string-array name="color_values" translatable="false">
+        <item>#000000</item>
+        <item>#ffffff</item>
+        <item>#1b1f23</item>
+        <item>#fafafa</item>
+        <item>#009688</item>
+        <item>#4CAF50</item>
+        <item>#FF9800</item>
+        <item>#F44336</item>
+        <item>#3F51B5</item>
     </string-array>
 
 </resources>
