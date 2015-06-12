@@ -13,8 +13,10 @@
     limitations under the License.
 -->
 <resources>
+    <color name="white">@android:color/white</color>
+
     <!-- Material -->
-    <color name="primary">@*android:color/material_blue_grey_900</color>
-    <color name="primary_dark">@*android:color/material_blue_grey_950</color>
+    <color name="primary">#ff3f51b5</color>
+    <color name="primary_dark">#ff303f9f</color>
     <color name="accent">@*android:color/material_deep_teal_500</color>
 </resources>

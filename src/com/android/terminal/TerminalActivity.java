@@ -268,4 +268,8 @@ public class TerminalActivity extends Activity {
         }
         return false;
     }
+
+    public void setTerminalTitleTextColor(int color) {
+        mTitles.setTextColor(color);
+    }
 }

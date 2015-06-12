@@ -370,6 +370,8 @@ public class TerminalView extends ListView {
         String backgroundColor;
         String textColor;
 
+        TerminalActivity activity = (TerminalActivity) getContext();
+
         fontSize = sp.getString(TerminalSettingsActivity.KEY_FONT_SIZE,
                 TerminalSettingsActivity.DEFAULT_TEXT_SIZE);
         backgroundColor = sp.getString(TerminalSettingsActivity.KEY_BACKGROUND_COLOR,
@@ -393,5 +395,6 @@ public class TerminalView extends ListView {
         mMetrics.run.fg = fg;
         mMetrics.run.bg = bg;
         mMetrics.cursorPaint.setColor(fg);
+        activity.setTerminalTitleTextColor(fg);
     }
 }
