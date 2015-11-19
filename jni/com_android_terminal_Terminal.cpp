@@ -20,13 +20,13 @@
 #include <utils/Mutex.h>
 #include "android_runtime/AndroidRuntime.h"
 
-#include "forkpty.h"
 #include "jni.h"
 #include "JNIHelp.h"
 #include "ScopedLocalRef.h"
 #include "ScopedPrimitiveArray.h"
 
 #include <fcntl.h>
+#include <pty.h>
 #include <stdio.h>
 #include <termios.h>
 #include <unistd.h>
