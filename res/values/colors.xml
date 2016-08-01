@@ -18,5 +18,4 @@
     <!-- Material -->
     <color name="primary">#ff3f51b5</color>
     <color name="primary_dark">#ff303f9f</color>
-    <color name="accent">@*android:color/material_deep_teal_500</color>
 </resources>
